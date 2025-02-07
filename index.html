@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {font-family: 'Tahoma', 'sans-serif';
+font-size: 24px;font-weight: bold;text-align:center;}
+
+.redColouredText{ text-align: justify; text-align: center; color: red;
+}
+p{color: black}
+h1{color:black}
+
+@keyframes pulse {
+    100%{opacity:1;}
+}
+
+@keyframes aa{
+from{
+background-color: red;
+}
+to{
+background-color: blue;
+}
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.topNavigationBar{
+overflow: hidden;
+background-color:white;
+margin: 10px;
+position: fixed;
+}
+
+.topNavigationBar a{
+float:left;
+color:Black;
+text-align: justify;
+text-align: center;
+padding: 10px 20px;
+font-size:20px;
+}
+
+.topNavigationBar a:hover{
+background-color:grey;
+color:black;
+}
+
+.btn {
+  background-color: #4ABDAC;
+  border-style: outset;
+  border-width: thick;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  animation: shake 1.2s linear infinite;
+  animation-play-state: paused;   
+  transition: ease-out 0.3s;
+  box-shadow: inset 0 0 0 0 #f9e506;
+}
+
+.btn:hover {
+cursor: pointer;  box-shadow: inset 300px 0 0 0 #f9e506;
+animation-play-state: running;
+}
+
+.topNavigationBar a.active
+{
+background-color: Violet;
+color:White;
+}
+
+@keyframes backgroundChange {
+  from {background-color: #CAEBF2;}
+  to {background-color: #4ABDAC;}
+}
+@keyframes textChange {
+  from {color: White;}
+  to {color: Black;}
+}
+
+p.bordered{
+	border: 2px solid violet;
+	padding: 20px;
+	margin: 20px;
+	text-align: justify;
+	text-align: center;
+	background-color: Violet;
+	color: white;
+}
+
+div.openSpace{
+margin:10px;
+padding:30px;
+}
+
+.sticky{
+  position: sticky;
+  top: 0;
+  padding: 1px;
+  background-color: #cae8ca;
+  border: 1px solid white;
+}
+
+.animatedReverse{
+animation: textChange 6s linear infinite alternate-reverse;
+}
+
+
+div.animatedBorder {
+  background: linear-gradient(-90deg, #42f59e, #a742f5, #f59e42);
+  background-size: 400% 400%;   
+  animation: gradient 6s ease infinite alternate-reverse;
+  animation-fill-mode: forwards;
+  border: 1px solid white;
+  padding: 300px;
+  height: 270px;
+	
+  text-align: justify;
+  text-align: center;
+  color:white;
+
+
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+</style>
+<title>Will's Portfolio</title>
+</head>
+<body>
+
+<div class="topNavigationBar">
+  <a class="active" href="home.html">Home</a>
+  <a href="c_sharp.html">C#</a>
+  <a href="c++.html">C++</a>
+  <a href="java.html">Java</a>
+  <a href="websites.html">Websites</a>
+  <a href="aboutme.html">About Me</a>
+</div>
+
+<body style="background-color:white;">
+
+<div class="openSpace"> </div>
+
+<div style="font-size:4vw" class="animatedBorder"> <span class="animatedReverse">Will's Portfolio</span>
+<div class="openSpace"> </div>
+
+<button class="btn" input type="btn" onclick = "changepage()" style = "height:160px;width:240px;font-size:30pt;">
+<span>Get Started </span></button>
+
+</div>
+
+
+<script>
+
+function changepage(){
+	window.location = "c_sharp.html";
+		
+}
+function myFunction(){
+return Math.random() * 255;
+}
+</script>
+
+</body>
+</html>
