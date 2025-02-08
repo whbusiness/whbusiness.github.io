@@ -181,16 +181,24 @@ animation: textChange 3s linear infinite alternate;}
 animation: backgroundColourChange 6s linear infinite alternate;
 }
 div.Background{
-background: linear-gradient(-90deg, #42f59e, #a742f5, #f59e42);
-  background-size: 400% 400%;   
+background: linear-gradient(-135deg, #42f59e, #a742f5, #f59e42);
+background-size: 400% 400%;
   border: 1px solid white;
   padding: 300px;
-  height: 45vh;
+  height: 100%;
 	
   text-align: justify;
   text-align: center;
   color:white;
 
+}
+div.vidLeft{
+position:relative;
+left:400px;
+display:flex;
+}
+div.multipleVid{
+display:inline-block;
 }
 
 @keyframes wobble{
@@ -229,10 +237,23 @@ background: linear-gradient(-90deg, #42f59e, #a742f5, #f59e42);
 <p>I have made many games using Unity and C#, stemming from solo indie projects to group projects with game artists and designers.</p>
 <div class = "openSpace"></div>
 <p>For a University project I compared Behaviour trees and Finite State Machines to create a maze traversal solution. The video below shows the solution in video and the code can be found at https://github.com/whbusiness/AIMazeTraverse</p>
-<video width="320" height="240" controls>
+<video width="40%" height="40%" controls>
   <source src="AIMaze.mkv" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+<div class = "openSpace"></div>
+<p>I have worked on different types of games. The game below is a wave survival game where you can pick either a top down car shooter or a first person shooter. I implemented my own aim assist as the game was made for Xbox. I have also worked on a lot of UI elements when developing games.</p>
+<div class = "multipleVid">
+<video width="40%" height="40%" controls>
+  <source src="CarWarsHealth.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video width="40%" height="40%" controls>
+  <source src="CarWarsUI.mkv" type="video/mp4">
+  Your browser does not support the video tag.
+</video></div>
+<div class = "openSpace"></div>
+<p>Another solution I worked on in Unity and C# was cinematic scenes. I created a game where the user could see the cinematic scene play and then play through the created scene.</p>
 </div>
 
 
