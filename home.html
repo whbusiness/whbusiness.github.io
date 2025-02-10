@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-
+*{
+box-sizing: border-box;
+}
 body {font-family: 'Tahoma', 'sans-serif';
-font-size: 24px;font-weight: bold;text-align:center;}
+font-size: 3.5vw;font-weight: bold;text-align:center;}
 
 .redColouredText{ text-align: justify; text-align: center; color: red;
 }
@@ -128,14 +131,56 @@ div.animatedBorder {
   animation-fill-mode: forwards;
   border: 1px solid white;
   padding: 300px;
-  height: 45vh;
-	
+  height: 100%;
+  width:100%
   text-align: justify;
   text-align: center;
   color:white;
-
+  overflow: hidden;
 
 }
+
+div.title{
+margin-top:200px;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  body {
+diplay:block;
+    font-size:15vw;
+text-align:left;
+  }
+div.animatedBorder{
+padding:0px;
+text-align: center;
+overflow:auto;
+height: 92.5vh;
+}
+div.title{
+margin-top:350px;
+}
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+    body {
+diplay:block;
+    font-size:15vw;
+text-align:left;
+  }
+div.animatedBorder{
+padding:0px;
+text-align: center;
+overflow:auto;
+}
+
+div.title{
+margin-top:400px;
+}
+} 
+
+
+
 
 @keyframes gradient {
     0% {
@@ -164,12 +209,14 @@ div.animatedBorder {
 
 <div class="openSpace"> </div>
 
-<div style="font-size:4vw" class="animatedBorder"> <span class="animatedReverse">Will's Portfolio</span>
+<div class="animatedBorder"><div class = "title"> <span class="animatedReverse">Will's Portfolio</span></div>
 <div class="openSpace"> </div>
 
 <button class="btn" input type="btn" onclick = "changepage()" style = "height:160px;width:240px;font-size:30pt;">
 <span>Get Started </span></button>
-
+<div class = "openSpace"></div>
+<div class = "openSpace"></div>
+<div style = "margin:10px;padding:25px"></div>
 </div>
 
 
