@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-
+*{
+box-sizing: border-box;
+}
 body {font-family: 'Tahoma', 'sans-serif';
-font-size: 24px;font-weight: bold;text-align:center;}
+font-size: 1.5vw;font-weight: bold;text-align:center;}
 
 .redColouredText{ text-align: justify; text-align: center; color: red;
 }
@@ -190,8 +193,39 @@ background: linear-gradient(135deg, #ff0000, #a742f5, #f59e42);
   text-align: justify;
   text-align: center;
   color:white;
+width:100%;
+overflow: hidden;
 
 }
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  body {
+diplay:block;
+    font-size:3vw;
+text-align:left;
+  }
+div.Background{
+padding:0px;
+text-align: center;
+overflow:auto;
+}
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+    body {
+diplay:block;
+    font-size:3vw;
+text-align:left;
+  }
+div.Background{
+padding:0px;
+text-align: center;
+overflow:auto;
+}
+} 
+
+
 
 @keyframes wobble{
 0%,5%{transform: rotateZ(0);}
@@ -221,7 +255,7 @@ background: linear-gradient(135deg, #ff0000, #a742f5, #f59e42);
 
 <div class="openSpace"> </div>
 
-<div style="font-size:1vw" class="Background">
+<div class="Background">
 <h1>About Me</h1> 
 <div class="openSpace">
 <p>I am very driven and passionate about what I want to do. I aim to become a games programmer and hope to climb the ranks to Lead games programmer.</p>

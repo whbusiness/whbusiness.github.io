@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+*{
+box-sizing: border-box;
+}
 
 body {font-family: 'Tahoma', 'sans-serif';
-font-size: 24px;font-weight: bold;text-align:center;}
+font-size: 1.5vw;font-weight: bold;text-align:center;}
 
 .redColouredText{ text-align: justify; text-align: center; color: red;
 }
@@ -190,6 +194,44 @@ background: linear-gradient(90deg, #42f59e, #a742f5, #f59e42);
   text-align: justify;
   text-align: center;
   color:white;
+width:100%;
+overflow:hidden;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  body {
+diplay:block;
+    font-size:3vw;
+text-align:left;
+  }
+div.Background{
+padding:0px;
+text-align: center;
+overflow:auto;
+}
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+    body {
+diplay:block;
+    font-size:3vw;
+text-align:left;
+  }
+div.Background{
+padding:0px;
+text-align: center;
+overflow:auto;
+}
+} 
+
+div.vidLeft{
+position:relative;
+left:400px;
+display:flex;
+}
+div.multipleVid{
+display:inline-block;
 }
 
 @keyframes wobble{
@@ -220,7 +262,7 @@ background: linear-gradient(90deg, #42f59e, #a742f5, #f59e42);
 
 <div class="openSpace"> </div>
 
-<div style="font-size:1vw" class="Background">
+<div class="Background">
 <h1>Here You Will Find Software Solutions Implementing The Java Language</h1> 
 <div class="openSpace"> </div>
 <p>I have created mobile apps using Java</p>
