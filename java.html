@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 *{
@@ -16,15 +17,16 @@ p{color: black}
 h1{color:black}
 
 
-.topNavigationBar{
+.topnav{
 overflow: hidden;
 background-color:white;
 margin: 10px;
 position: fixed;
 }
 
-.topNavigationBar a{
+.topnav a{
 float:left;
+display: block;
 color:Black;
 text-align: justify;
 text-align: center;
@@ -32,13 +34,17 @@ padding: 10px 20px;
 font-size:20px;
 }
 
-.topNavigationBar a:hover{
+.topnav a:hover{
 background-color:grey;
 color:black;
 }
 
+.topnav .icon {
+  display: none;
+}
 
-.topNavigationBar a.active
+
+.topnav a.active
 {
 background-color: Violet;
 color:White;
@@ -154,28 +160,8 @@ background-color: #4ABDAC;
 }
 
 
-span::before{
-	content: "Resources";
-	animation: typingEffect 6s infinite;
-	padding-left: 10px;
-}
 
-@keyframes typingEffect{
-	25%{ content: "Resources";
-	}
-	50%{ content: "Equipment";
-	}
-	75%{ content: "Apparatus";}
-	100%{ content: "Materials";}
-}
-
-@keyframes fadein{
-from{
-transform: scale(.1);
-}
-to{
-transform: scale(1);
-}
+div.title{
 }
 
 .animateText{
@@ -211,17 +197,47 @@ text-align: center;
 overflow:auto;
 }
 }
+@media only screen and (max-width:636px){
+body {
+    font-size:4vw;
+text-align:left;
+  }
+
+
+.topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
 @media only screen and (max-width:500px) {
   /* For mobile phones: */
     body {
 diplay:block;
-    font-size:3vw;
+    font-size:6vw;
 text-align:left;
   }
 div.Background{
 padding:0px;
 text-align: center;
 overflow:auto;
+height:100vh;
+}
+div.title{
+margin-top:100px;
 }
 } 
 
@@ -249,13 +265,18 @@ display:inline-block;
 </head>
 <body>
 
-<div class="topNavigationBar">
+<div class="topnav" id = "myTopnav">
   <a href="home.html">Home</a>
   <a href="c_sharp.html">C#</a>
   <a href="c++.html">C++</a>
   <a class = "active" href="java.html">Java</a>
   <a href="websites.html">Websites</a>
   <a href="aboutme.html">About Me</a>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+<i> <span class="material-symbols-outlined">
+menu
+</span> </i>
+  </a>
 </div>
 
 <body style="background-color:white;">
@@ -263,15 +284,29 @@ display:inline-block;
 <div class="openSpace"> </div>
 
 <div class="Background">
+<div class = "title">
 <h1>Here You Will Find Software Solutions Implementing The Java Language</h1> 
 <div class="openSpace"> </div>
 <p>I have created mobile apps using Java</p>
 <div class = "openSpace"></div>
 <p>https://github.com/whbusiness/JavaApp</p>
 <div class = "openSpace"></div>
-<p>The above link will show you the app files on GitHub. The application was an app that would allow you as an admin to add items to the shop, whilst the customers view would allow them to add items to a basket and then send out an order. The application made use of a database to store and retrieve store items as well as orders placed and users logins and current basket</p>
-
+<p>The above link will show you the app files on GitHub.</p>
+<p>The application was an app that would allow you as an admin to add items to the shop, whilst the customers view would allow them to add items to a basket and then send out an order.</p>
+<p>The application made use of a database to store and retrieve store items as well as orders placed and users logins and current basket</p>
 </div>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 
 
 </body>

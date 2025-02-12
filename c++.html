@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 *{
@@ -16,15 +17,16 @@ p{color: black}
 h1{color:black}
 
 
-.topNavigationBar{
+.topnav{
 overflow: hidden;
 background-color:white;
 margin: 10px;
 position: fixed;
 }
 
-.topNavigationBar a{
+.topnav a{
 float:left;
+display: block;
 color:Black;
 text-align: justify;
 text-align: center;
@@ -32,13 +34,17 @@ padding: 10px 20px;
 font-size:20px;
 }
 
-.topNavigationBar a:hover{
+.topnav a:hover{
 background-color:grey;
 color:black;
 }
 
+.topnav .icon {
+  display: none;
+}
 
-.topNavigationBar a.active
+
+.topnav a.active
 {
 background-color: Violet;
 color:White;
@@ -154,12 +160,6 @@ background-color: #4ABDAC;
 }
 
 
-span::before{
-	content: "Resources";
-	animation: typingEffect 6s infinite;
-	padding-left: 10px;
-}
-
 @keyframes typingEffect{
 	25%{ content: "Resources";
 	}
@@ -195,6 +195,32 @@ width:100%;
   text-align: center;
   color:white;
 overflow: hidden;
+}
+
+@media only screen and (max-width:636px){
+body {
+    font-size:4vw;
+text-align:left;
+  }
+
+
+.topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 
 @media only screen and (max-width:800px) {
@@ -249,13 +275,18 @@ display:inline-block;
 </head>
 <body>
 
-<div class="topNavigationBar">
+<div class="topnav" id = "myTopnav">
   <a href="home.html">Home</a>
   <a href="c_sharp.html">C#</a>
   <a class = "active" href="c++.html">C++</a>
   <a href="java.html">Java</a>
   <a href="websites.html">Websites</a>
   <a href="aboutme.html">About Me</a>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+<i> <span class="material-symbols-outlined">
+menu
+</span> </i>
+  </a>
 </div>
 
 <body style="background-color:white;">
@@ -275,7 +306,16 @@ display:inline-block;
   Your browser does not support the video tag.
 </video>
 </div>
-
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 
 </body>
 </html>

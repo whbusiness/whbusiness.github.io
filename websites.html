@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 *{
@@ -15,16 +16,16 @@ font-size: 1.5vw;font-weight: bold;text-align:center;}
 p{color: black}
 h1{color:black}
 
-
-.topNavigationBar{
+.topnav{
 overflow: hidden;
 background-color:white;
 margin: 10px;
 position: fixed;
 }
 
-.topNavigationBar a{
+.topnav a{
 float:left;
+display: block;
 color:Black;
 text-align: justify;
 text-align: center;
@@ -32,13 +33,17 @@ padding: 10px 20px;
 font-size:20px;
 }
 
-.topNavigationBar a:hover{
+.topnav a:hover{
 background-color:grey;
 color:black;
 }
 
+.topnav .icon {
+  display: none;
+}
 
-.topNavigationBar a.active
+
+.topnav a.active
 {
 background-color: Violet;
 color:White;
@@ -153,13 +158,6 @@ background-color: #4ABDAC;
  height: 100px;
 }
 
-
-span::before{
-	content: "Resources";
-	animation: typingEffect 6s infinite;
-	padding-left: 10px;
-}
-
 @keyframes typingEffect{
 	25%{ content: "Resources";
 	}
@@ -198,7 +196,37 @@ width:100%;
 overflow: hidden;
 }
 
+@media only screen and (max-width:636px){
+body {
+    font-size:4vw;
+text-align:left;
+  }
 
+
+.topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width:662px){
+body{
+height:100vh;
+}
+}
 @media only screen and (max-width:800px) {
   /* For tablets: */
   body {
@@ -251,13 +279,17 @@ display:inline-block;
 </head>
 <body>
 
-<div class="topNavigationBar">
-  <a href="home.html">Home</a>
+<div class="topnav" id = "myTopnav">  <a href="home.html">Home</a>
   <a href="c_sharp.html">C#</a>
   <a href="c++.html">C++</a>
   <a href="java.html">Java</a>
   <a class = "active" href="websites.html">Websites</a>
   <a href="aboutme.html">About Me</a>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+<i> <span class="material-symbols-outlined">
+menu
+</span> </i>
+  </a>
 </div>
 
 <body style="background-color:white;">
@@ -274,6 +306,16 @@ display:inline-block;
 <p>Whilst most of my programming comes from creating games, I have enjoyed making websites such as this</p>
 </div>
 
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 
 </body>
 </html>
