@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{
+box-sizing: border-box;
+}
+
+body {font-family: 'Tahoma', 'sans-serif';
+font-size: 1.5vw;font-weight: bold;text-align:center;}
+
+.redColouredText{ text-align: justify; text-align: center; color: red;
+}
+p{color: black}
+h1{color:black}
+
+
+
+.topnav{
+overflow: hidden;
+background-color:white;
+margin: 10px;
+position: fixed;
+}
+
+.topnav a{
+float:left;
+display: block;
+color:Black;
+text-align: justify;
+text-align: center;
+padding: 10px 20px;
+font-size:20px;
+}
+
+.topnav a:hover{
+background-color:grey;
+color:black;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+
+.topnav a.active
+{
+background-color: Violet;
+color:White;
+}
+
+@keyframes backgroundChange {
+  0% {left:800px; top:-400px;}
+  25% {left:800px; top:-250px;}
+  50% {left:800px; top:0px;}
+  75% {left:800px; top:250px;}
+  100% {left:800px; top:500px;}
+}
+
+@keyframes backgroundColourChange{
+	0% {background-color: Brown;}
+	50% {background-color: White;}
+	100% {background-color: Black;}
+}
+
+@keyframes textChange {
+  0% {color: #CAEBF2;}
+  100% {color: Black;}
+}
+
+p.bordered{
+	border: 2px solid violet;
+	padding: 20px;
+	margin: 20px;
+	text-align: justify;
+	text-align: center;
+	background-color: Violet;
+	color: white;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  height:100px;
+  width:150px;
+  font-size:22pt;
+  color: white;
+  padding: 12px 20px;
+  border-style: outset;
+  border-width: thick;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: ease-out 1s;
+  animation: wobble 2s linear infinite;
+  box-shadow: inset 0 0 0 0 #f9e506;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+cursor: pointer;  box-shadow: inset 300px 0 0 0 #f9e506;
+animation-play-state: running;
+}
+
+div.openSpace{
+margin:10px;
+padding:30px;
+}
+
+.sticky{
+  position: sticky;
+  top: 0;
+  padding: 1px;
+  background-color: #cae8ca;
+  border: 1px solid white;
+}
+
+.animatedReverse{
+animation: textChange 4s linear infinite alternate-reverse;
+}
+
+div.imageBorder {
+  position: relative;
+  border: 1px solid white;
+  padding: 300px;
+  height: 200px;
+
+  text-align: justify;
+  text-align: center;
+  color:white;
+  background-color: White;
+  animation: backgroundChange 4s linear infinite alternate;
+}
+
+
+.animatedBorder {
+  position: relative;
+  padding: 100px;
+  height: 100px;
+  width: 200px;
+  animation: backgroundChange 6s linear infinite alternate;
+}
+
+div.borderBlue{
+background-color: #CAEBF2;
+
+ padding: 100px;
+ height: 100px;
+}
+div.borderWhite{
+background-color: white;
+
+ padding: 100px;
+ height: 100px;
+}
+div.borderGreen{
+background-color: #4ABDAC;
+
+ padding: 200px;
+ height: 100px;
+}
+
+@keyframes typingEffect{
+	25%{ content: "Resources";
+	}
+	50%{ content: "Equipment";
+	}
+	75%{ content: "Apparatus";}
+	100%{ content: "Materials";}
+}
+
+@keyframes fadein{
+from{
+transform: scale(.1);
+}
+to{
+transform: scale(1);
+}
+}
+
+.animateText{
+animation: textChange 3s linear infinite alternate;}
+
+.animateBackground{
+animation: backgroundColourChange 6s linear infinite alternate;
+}
+div.Background{
+background: linear-gradient(-135deg, #42f59e, #a742f5, #f59e42);
+background-size: 400% 400%;
+  border: 1px solid white;
+  padding: 300px;
+  height: 100%;
+width:100%;	
+  text-align: justify;
+  text-align: center;
+  color:white;
+overflow: hidden;
+}
+
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  body {
+diplay:block;
+    font-size:3vw;
+text-align:left;
+  }
+div.Background{
+padding:0px;
+text-align: center;
+overflow:auto;
+}
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+    body {
+diplay:block;
+    font-size:3vw;
+text-align:left;
+  }
+div.Background{
+padding:0px;
+text-align: center;
+overflow:auto;
+}
+} 
+
+@media only screen and (max-width:636px){
+body {
+    font-size:4vw;
+text-align:left;
+  }
+
+
+.topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+div.vidLeft{
+position:relative;
+left:400px;
+display:flex;
+}
+div.multipleVid{
+display:inline-block;
+}
+
+@keyframes wobble{
+0%,5%{transform: rotateZ(0);}
+15%{transform: rotateZ(-15deg);}
+20%{transform: rotateZ(10deg);}
+25%{transform: rotateZ(-10deg);}
+30%{transform: rotateZ(6deg);}
+35%{transform: rotateZ(-4deg);}
+40%,100%{transform: rotateZ(0);}
+}
+
+</style>
+<title>Page Title</title> 
+</head>
+<body>
+
+<div class="topnav" id = "myTopnav">
+  <a href="home.html">Home</a>
+  <a class ="active" href="c_sharp.html">C#</a>
+  <a href="c++.html">C++</a>
+  <a href="java.html">Java</a>
+  <a href="websites.html">Websites</a>
+  <a href="aboutme.html">About Me</a>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+<i> <span class="material-symbols-outlined">
+menu
+</span> </i>
+  </a>
+</div>
+
+<body style="background-color:white;">
+
+<div class="openSpace"> </div>
+
+<div class="Background">
+<h1>Here You Will Find Software Solutions Implementing The C# Language</h1> 
+<div class = "openSpace"></div>
+<p>C# is my most used language. </p>
+<div class = "openSpace"></div>
+<p>I have made many games using Unity and C#, stemming from solo indie projects to group projects with game artists and designers.</p>
+<div class = "openSpace"></div>
+<p>For a University project I compared Behaviour trees and Finite State Machines to create a maze traversal solution. The video below shows the solution in video and the code can be found at https://github.com/whbusiness/AIMazeTraverse</p>
+<video width="40%" height="40%" controls>
+  <source src="AIMaze.mkv" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<div class = "openSpace"></div>
+<p>I have worked on different types of games. The game below is a wave survival game where you can pick either a top down car shooter or a first person shooter. I implemented my own aim assist as the game was made for Xbox. I have also worked on a lot of UI elements when developing games.</p>
+<div class = "multipleVid">
+<video width="40%" height="40%" controls>
+  <source src="CarWarsHealth.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video width="40%" height="40%" controls>
+  <source src="CarWarsUI.mkv" type="video/mp4">
+  Your browser does not support the video tag.
+</video></div>
+<div class = "openSpace"></div>
+<p>Another solution I worked on in Unity and C# was cinematic scenes. I created a game where the user could see the cinematic scene play and then play through the created scene. The code shown is the cinematic code for the street scene. I used Lerp to move the camera and Slerp to rotate the camera. This could be more optimised but for this small project it was ok (No issues in terms of framerate) how it was, due to time restraints</p>
+<video width="40%" height="40%" controls>
+  <source src="Cinematics.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<img src="MovingCamera.png" alt="MovCam" width="60%" height="60%">
+<div class = "openSpace"></div>
+<p>For my dissertation I worked on making a game with accessibility methods such as text-to-speech or speech recognition. I also made use of JSON to save setting values and the current items within the level.</p>
+<video width="40%" height="40%" controls>
+  <source src="DissertationSaver.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<img src="JSONSave.png" alt="JSON" width="20%" height="20%">
+<div class = "openSpace"></div>
+<p>I have also worked in group projects with game designers and game artists. The game below called TrashPanda was made by 2 programmers (including me), 3 game designers and 2 game artists. The game was made for and tested on the Xbox. In this game I worked on the doors, map, player movement, elevator, teleporting (venting), timer and UI interactions. My code can be found at https://github.com/whbusiness/TrashPandaGroupGame/tree/main/Assets/Script/Will</p>
+<video width="40%" height="40%" controls>
+  <source src="DoorsandMap.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<img src="doors.png" alt="door" width="20%" height="20%">
+<div class = "openSpace"></div>
+<p>Another group project I worked on was a game called ScrollRoll made by 2 programmers (including me), 2 game artists and 2 game designers. I had to make sure my code worked with others in this project especially. The two main parts of the game I worked on was the AI and the camera. In this game I decided to use rigidbody AIs rather than navmesh agents due to the game being a physics based game where you try to push and pull the other players (or AI) off the map. The game is local multiplayer and I worked on including AI to fill the game up to 4 people (AI would replace each missing person). The video below shows 1 player (purple) and the rest are AI. The AI works by picking a random target out of all the players (itself excluded)It then checks to see if it is within range, if it is then it will push them (the push has a cooldown). The AI will look in the direction of the target and will always move forward using rigidbody.addforce </p>
+<video width="40%" height="40%" controls>
+  <source src="ScrollRollAI.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<img src="AIHandler.png" alt="AIController" width="30%" height="30%">
+<img src="AIMove.png" alt="AIMove" width="30%" height="30%">
+
+</div>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>

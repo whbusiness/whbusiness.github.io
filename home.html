@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 *{
@@ -40,15 +41,17 @@ background-color: blue;
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-.topNavigationBar{
+
+.topnav{
 overflow: hidden;
 background-color:white;
 margin: 10px;
 position: fixed;
 }
 
-.topNavigationBar a{
+.topnav a{
 float:left;
+display: block;
 color:Black;
 text-align: justify;
 text-align: center;
@@ -56,11 +59,21 @@ padding: 10px 20px;
 font-size:20px;
 }
 
-.topNavigationBar a:hover{
+.topnav a:hover{
 background-color:grey;
 color:black;
 }
 
+.topnav .icon {
+  display: none;
+}
+
+
+.topnav a.active
+{
+background-color: Violet;
+color:White;
+}
 .btn {
   background-color: #4ABDAC;
   border-style: outset;
@@ -79,12 +92,6 @@ color:black;
 .btn:hover {
 cursor: pointer;  box-shadow: inset 300px 0 0 0 #f9e506;
 animation-play-state: running;
-}
-
-.topNavigationBar a.active
-{
-background-color: Violet;
-color:White;
 }
 
 @keyframes backgroundChange {
@@ -161,6 +168,34 @@ div.title{
 margin-top:350px;
 }
 }
+
+@media only screen and (max-width:636px){
+body {
+    font-size:4vw;
+text-align:left;
+  }
+
+
+.topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
 @media only screen and (max-width:500px) {
   /* For mobile phones: */
     body {
@@ -196,13 +231,18 @@ margin-top:400px;
 </head>
 <body>
 
-<div class="topNavigationBar">
+<div class="topnav" id = "myTopnav">
   <a class="active" href="home.html">Home</a>
   <a href="c_sharp.html">C#</a>
   <a href="c++.html">C++</a>
   <a href="java.html">Java</a>
   <a href="websites.html">Websites</a>
   <a href="aboutme.html">About Me</a>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+<i> <span class="material-symbols-outlined">
+menu
+</span> </i>
+  </a>
 </div>
 
 <body style="background-color:white;">
@@ -226,8 +266,13 @@ function changepage(){
 	window.location = "c_sharp.html";
 		
 }
-function myFunction(){
-return Math.random() * 255;
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
 }
 </script>
 
